@@ -1,0 +1,206 @@
+@import "mixins";
+@import "variables";
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.w-100 {
+  width: 100%
+}
+
+body {
+  padding: 5vh 20vw;
+  background-color: @background;
+  font-family: @font;
+
+  header {
+    margin: 0.2em 0;
+    display: flex;
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+  }
+  .newTaskForm {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+
+    input {
+      border: none;
+      background-color: @background;
+      font-family: @font;
+      font-size: 1em;
+      height: 2em;
+      border-bottom: solid 1px;
+      &::placeholder {
+        font-style: italic;
+      }
+      &:focus {
+       outline: 0;
+      }
+    }
+    .fileInput {
+      margin-top: 2em;
+      font-size: 0.8em;
+      font-family: @font;
+      border:none;
+    }
+    .createBtn {
+      height: 2em;
+      font-weight: 600;
+      width: 30%;
+      align-self: flex-end;
+      border:none;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: @secondaryColor;
+        color: white;
+      }
+    }
+  }
+  .deadline {
+    align-self: flex-end;
+    font-size: 0.8em;
+    max-width: 30%;
+  }  
+
+  .tasksBlock {
+    margin-top: 2em;
+
+    .task {
+      display: flex;
+      flex-direction: column;
+      padding: 0.6em;
+      background-color: @primaryColor;
+      border-radius: 5px;
+      margin-bottom: 1em;
+    }
+    .taskData {
+      align-self: flex-end;
+      font-size: 0.8em;
+      color: black;
+      margin-left: 2em;
+    }
+    .files {
+      &:hover {
+        color: white;
+      }
+    }
+    .overTimerStyle {
+      color: rgb(255, 0, 0);
+    }
+    .taskTitle {
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    .taskDescription {
+      font-size: 1.2em;
+      margin-top: 1em;
+      color: lighten(black, 30%);
+    }
+    .doneTitleStyle {
+      text-decoration-line: line-through;
+    }
+    .edit_delete_section {
+      align-self: flex-end;
+    }
+  }
+  .doneTaskStyle {
+    opacity: 50%;
+  }
+  .modal {
+    display: block;
+    align-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80vw;
+    // height: 50vh;
+  }
+  .close {
+    align-self: flex-end;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    &:hover,
+    &:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  .editTaskForm {
+    input {
+      background-color: white;
+      margin: 1em 0;
+      width: 100%;
+      border: none;
+      font-family: @font;
+      font-size: 1em;
+      height: 2em;
+      border-bottom: solid 1px;
+      &::placeholder {
+        font-style: italic;
+      }
+      &:focus {
+       outline: 0;
+      }
+    }
+    button {
+      height: 2em;
+      font-weight: 600;
+      width: 30%;
+      align-self: flex-end;
+      border:none;
+      border-radius: 5px;
+      background-color: rgb(234, 234, 234);
+      cursor: pointer;
+      &:hover {
+        background-color: @secondaryColor;
+        color: white;
+      }
+    }
+    .editDeadline {
+      align-self: flex-end;
+      font-size: 0.8em;
+      max-width: 30%;
+    }
+  }
+}
+
+[class^="icon_"]:before, [class*=" icon_"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+.icon_edit:before { 
+  content: '\e801'; 
+}
+.icon_delete:before { 
+  content: '\e800'; 
+  margin-left: 0.7em;
+}
