@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'Euclid Circular A L';
+  src: url('../fonts/Euclid Circular A Light.ttf');
+}
+@font-face {
+  font-family: 'Euclid Circular A M';
+  src: url('../fonts/Euclid Circular A Medium.ttf');
+}
+@font-face {
+  font-family: fontello;
+  src: url('../icons/font/fontello.ttf');
+  src: url('../icons/font/fontello.woff');
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+.w-100 {
+  width: 100%;
+}
+body {
+  padding: 5vh 20vw;
+  background-color: #dde6ee;
+  font-family: "Euclid Circular A L";
+}
+body header {
+  margin: 0.2em 0;
+  display: flex;
+  font-size: 3em;
+  font-weight: bold;
+  color: black;
+}
+body .newTaskForm {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+}
+body .newTaskForm input {
+  border: none;
+  background-color: #dde6ee;
+  font-family: "Euclid Circular A L";
+  font-size: 1em;
+  height: 2em;
+  border-bottom: solid 1px;
+}
+body .newTaskForm input::placeholder {
+  font-style: italic;
+}
+body .newTaskForm input:focus {
+  outline: 0;
+}
+body .newTaskForm .fileInput {
+  margin-top: 2em;
+  font-size: 0.8em;
+  font-family: "Euclid Circular A L";
+  border: none;
+}
+body .newTaskForm .createBtn {
+  height: 2em;
+  font-weight: 600;
+  width: 30%;
+  align-self: flex-end;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+body .newTaskForm .createBtn:hover {
+  background-color: #93b5d2;
+  color: white;
+}
+body .deadline {
+  align-self: flex-end;
+  font-size: 0.8em;
+  max-width: 30%;
+}
+body .tasksBlock {
+  margin-top: 2em;
+}
+body .tasksBlock .task {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6em;
+  background-color: #ccdff0;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+body .tasksBlock .taskData {
+  align-self: flex-end;
+  font-size: 0.8em;
+  color: black;
+  margin-left: 2em;
+}
+body .tasksBlock .files:hover {
+  color: white;
+}
+body .tasksBlock .overTimerStyle {
+  color: #ff0000;
+}
+body .tasksBlock .taskTitle {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+body .tasksBlock .taskDescription {
+  font-size: 1.2em;
+  margin-top: 1em;
+  color: #4d4d4d;
+}
+body .tasksBlock .doneTitleStyle {
+  text-decoration-line: line-through;
+}
+body .tasksBlock .edit_delete_section {
+  align-self: flex-end;
+}
+body .doneTaskStyle {
+  opacity: 50%;
+}
+body .modal {
+  display: block;
+  align-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+body .modal-content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80vw;
+}
+body .close {
+  align-self: flex-end;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+body .close:hover,
+body .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+body .editTaskForm input {
+  background-color: white;
+  margin: 1em 0;
+  width: 100%;
+  border: none;
+  font-family: "Euclid Circular A L";
+  font-size: 1em;
+  height: 2em;
+  border-bottom: solid 1px;
+}
+body .editTaskForm input::placeholder {
+  font-style: italic;
+}
+body .editTaskForm input:focus {
+  outline: 0;
+}
+body .editTaskForm button {
+  height: 2em;
+  font-weight: 600;
+  width: 30%;
+  align-self: flex-end;
+  border: none;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+body .editTaskForm button:hover {
+  background-color: #93b5d2;
+  color: white;
+}
+body .editTaskForm .editDeadline {
+  align-self: flex-end;
+  font-size: 0.8em;
+  max-width: 30%;
+}
+[class^="icon_"]:before,
+[class*=" icon_"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+.icon_edit:before {
+  content: '\e801';
+}
+.icon_delete:before {
+  content: '\e800';
+  margin-left: 0.7em;
+}
